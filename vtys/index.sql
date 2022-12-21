@@ -1,0 +1,18 @@
+USE  SPOR_ARSIVI 
+GO
+
+DROP INDEX IF EXISTS OyuncuAdIndex
+ON OYUNCU
+GO
+
+CREATE NONCLUSTERED INDEX OyuncuAdIndex ON OYUNCU
+        (
+        OyuncuAdi ASC
+        )
+		GO
+
+		SET STATISTICS IO ON
+		SET STATISTICS TIME ON
+
+SELECT OyuncuAdi FROM OYUNCU WHERE OyuncuAdi = 'Ronald'
+GO
